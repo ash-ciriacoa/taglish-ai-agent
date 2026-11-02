@@ -82,3 +82,4 @@ def text_response(text: str) -> LLMResponse:
 def tool_response(name: str, args: dict[str, Any], tool_id: str ="t1") -> LLMResponse:
     return LLMResponse([{"type": "tool_use", "id": tool_id, "name": name, "input": args}])
 
+
