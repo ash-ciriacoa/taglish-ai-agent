@@ -1,0 +1,9 @@
+# International considerations
+
+TODO as you learn from your eval results:
+- Tokenization cost for Filipino and Taglish versus English
+- Register and politeness ("po/opo") handling
+- Regional vocabulary and dialects beyond Tagalog (Cebuano, Ilocano)
+- Philippine English phrasing
+- Currency, date, and number formats
+- How to extend to other markets

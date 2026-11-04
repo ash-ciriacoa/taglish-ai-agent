@@ -1,0 +1,18 @@
+# Architecture
+
+## Components
+- `agent/llm.py`: model client interface. Hosted baseline now, local fine-tuned model later.
+- `agent/loop.py`: tool-calling loop with iteration cap, repeat detection, and confirmation gate.
+- `agent/tools.py`: tool implementations. Schemas come from `shared/tool_schemas.json`.
+- `eval/`: gold cases, metrics, and the runner.
+- `api/`: FastAPI service used by the web and iOS clients.
+
+## Stopping rules
+TODO: document why each limit has its default value.
+
+## Safety
+- `send_message` is denied unless a confirmation callback approves it.
+- Tool errors are returned to the model so it can fix its arguments.
+
+## Decisions log
+TODO: record choices and trade-offs as you make them.
