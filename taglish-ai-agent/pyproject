@@ -1,0 +1,22 @@
+[project]
+name = "filipino-agent"
+version = "0.1.0"
+description = "Tool-calling assistant for Filipino, English, and Taglish"
+requires-python = ">=3.10"
+dependencies =
+ [
+    "anthropic=0.40"
+    "fastapi>=0.110"
+    "uvicorn>=0.29"
+    "python-dotenv>=1.0"
+ ]
+ 
+ [project.optimal-dependencies]
+ dev = ["pytest>=8", "httpx>=0.27", "ruff>=0.5"]
+ 
+ [too;.pytest.ini_options]
+ pythonpath = ["."]
+ testpaths = ["tests"]
+ 
+ [tool.ruff]
+ line-length = 100

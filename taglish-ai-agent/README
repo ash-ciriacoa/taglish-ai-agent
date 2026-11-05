@@ -1,0 +1,37 @@
+# Filipino Agent
+
+A tool-calling assistant for Filipino, English, and Taglish, with a hand-built agent loop, an evaluation harness, and synthetic data, QLoRA/MLX fine-tuning, and a SwiftUI client.
+
+## Quick start
+```bash
+python -m venv .venv && source .venv/bin/activate
+pip install -e ".[dev]"
+cp .env.example .env          # add your ANTHROPIC_API_KEY
+pytest                        # runs offline, no API key needed
+python -m agent.cli           # chat in the terminal
+python -m eval.run_eval       # score the gold cases
+uvicorn api.main:app --reload # API on http://localhost:8000
+```
+
+## Layout
+| Path | Purpose |
+|---|---|
+| `agent/` | Model client, loop, tools, prompts |
+| `shared/tool_schemas.json` | Single source of truth for tools (Python and Swift) |
+| `eval/` | Gold cases, metrics, runner, saved results |
+| `api/` | FastAPI service |
+| `ios/` | Xcode project and `SwiftStarter/` files |
+| `data/`, `training/` | Synthetic data pipeline and fine-tuning (Phases 2-3) |
+| `docs/` | Architecture and international considerations |
+
+## Status
+
+- [x] Phase 0: agent loop, tools, tests
+- [ ] Phase 1: grow gold cases to 100, record baseline
+- [ ] Phase 2: synthetic data
+- [ ] Phase 3: fine-tune and compare
+- [ ] Phase 4: API + UI polish
+
+## Results
+
+TODO: baseline vs fine-tuned table.
