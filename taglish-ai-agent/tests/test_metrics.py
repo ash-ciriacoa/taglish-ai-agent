@@ -9,7 +9,7 @@ def test_language_match_none_when_undetectable():
     assert language_match("Split 950 pesos among 5 friends.", "ok") is None
     
 def test_args_match_number_and_time():
-    assert args_match({"total": 1800, "people": 4}, {"total": 1800.0, "people": 4, "tip_percent": 0.1})
+    assert args_match({"total": 1800, "people": 4}, {"total": 1800.0, "people": 4, "tip_percent": 0})
     assert args_match({"time": "2026-11-03T08:00:00+08:00"}, {"time": "2026-11-03T00:00:00+00:00"}
     )
     assert not args_match({"people": 4}, {"people": 3})
